@@ -1,0 +1,118 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+
+.container {
+    max-width: 1100px;
+    margin-inline: auto;
+    padding-inline: 24px; /* keeps content off the screen edges on mobile */
+}
+
+section {
+    padding-block: 50px;
+}
+
+
+nav {
+    display: flex;
+    gap: 24px;
+}
+
+
+/* --------- Header and hero --------- */
+
+header {
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: 20px;
+    padding-inline: 20px;
+}
+
+.hero {
+    min-height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero h1 {
+    font-size: 3rem; /* placeholder */
+    line-height: 1.1;
+}
+
+.hero p {
+    max-width: 45ch;
+    margin-top: 2px;
+}
+
+
+/* --------- About --------- */
+
+.about p {
+    max-width: 65ch;
+}
+
+.about-list {
+  padding-left: 1.5rem;
+}
+
+.about-list li {
+  margin-bottom: 8px; 
+}
+
+/* --------- Projects --------- */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    align-items: start;
+}
+
+.project-card {
+    border: 1px solid #000;
+    padding: 24px;
+    display: flex;           
+    flex-direction: column;
+    gap: 12px;   
+}
+
+.project-card img {
+    width: 100%;
+    height: 180px;     
+    object-fit: cover;
+}
+
+
+
+/* .project-card .desc {
+    
+} */
+
+
+
+
+footer {
+    padding-block: 40px;
+}
