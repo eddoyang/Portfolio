@@ -86,7 +86,7 @@ img {
 }
 
 section {
-    padding-block: 80px;
+    padding-block: 10px;
 }
 
 /* --------- Links --------- */
@@ -100,7 +100,7 @@ a:hover {
     color: var(--hover);
 }
 
-/* --------- Header and Hero --------- */
+/* --------- Header --------- */
 
 header {
     position: sticky;
@@ -122,18 +122,24 @@ nav {
     gap: 24px;
 }
 
+nav a:first-child {
+    margin-right: auto;     /* pushes Me left, shoves the rest to the right */
+}
+
+
+/* --------- Hero --------- */
 .hero {
     min-height: 30vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding-block: 0px;
 }
 
 .hero p {
     max-width: 45ch;
     margin-top: 2px;
 }
-
 
 /* --------- About --------- */
 
@@ -180,9 +186,17 @@ nav {
     text-align: center;
 }
 
-/* --------- Footer --------- */
-footer {
-    padding-block: 40px;
+/* --------- Contact --------- */
+#contact {
+    display: flex;
+    gap: 48px;
+    justify-content: left;
 }
+
+.details {
+    flex: 1;
+}
+
+
 
 

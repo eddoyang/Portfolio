@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Short+Stack&family=Sniglet&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>About — Eddie Yang</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Me</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html">Contact</a>
+            <a href="https://github.com/eddoyang" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://www.linkedin.com/in/eddie-yang-b092a5361/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Projects</h1>
+            </div>
+        </section>
+
+        <section id="projects"> 
+                <div class="container">
+                    <div class="projects-grid">
+                    
+                        <article class="project-card">
+                    
+                            <img src="images/Momentum.png" alt="Momentum Logo">
+                    
+                            <h3>Momentum</h3>
+                            <p class="subtitle">Personal Project</p>
+                            <p><a href="https://momentum-f0p6.onrender.com" target="_blank" rel="noopener noreferrer">Live Demo</a></p>
+                            <p><a href="https://github.com/eddoyang/Momentum" target="_blank" rel="noopener noreferrer">Repo</a></p>
+                            
+                            <div class="desc">
+                                <p>
+                                    Momentum is a personal/learning project that lets you add, complete, and remove tasks, with a focus on
+                                    hour-by-hour deadline ordering.
+                                    The app sorts tasks by their closest upcoming deadline so the next thing you need to work on is always front
+                                    and center.
+                                </p>
+                            </div>
+                            
+                            <p class="stack">Tech Stack</p>
+                            <ul>
+                                <li>Backend: Java 21, Spring Boot 4</li>
+                                <li>Persistence: JSON file on disk</li>
+                                <li>Frontend: Vanilla HTML, CSS, and JavaScript</li>
+                                <li>Build tool: Maven </li>
+                            </ul>
+                        
+                        </article>
+
+
+                        <article class="project-card">
+                            <img src="images/ReLeaf.png" alt="ReLeaf Logo">
+                            <h3>ReLeaf</h3>
+                            <p class="subtitle">Hackathon Project — Gemini API Award</p>
+                            <p>
+                                <a href="https://releaf-city.vercel.app/" target="_blank" rel="noopener noreferrer">Live Demo</a>
+                                <a href="https://releaf-backend.onrender.com/docs" target="_blank" rel="noopener noreferrer">Backend API</a>
+                            </p>
+                            <p><a href="https://youtu.be/P60QWDik0zc" target="_blank" rel="noopener noreferrer">Demo Video</a></p>
+                            <p><a href="https://github.com/anthonyl8/ReLeaf" target="_blank" rel="noopener noreferrer"> Repo </a></p>
+
+                            <div class="desc">
+                                <p>
+                                    ReLeaf is a smart urban planning tool designed to help cities and communities combat the Urban Heat Island (UHI) effect. It combines 
+                                    photorealistic 3D city visualization, real satellite thermal data, and Google's Gemini AI to provide actionable insights for greener, cooler cities.
+                                </p>
+                            </div>
+                            <p class="stack">Tech Stack</p>
+                            <ul>
+                                <li>Frontend: React + Vite + Deck.gl</li>
+                                <li>Backend: Python (FastAPI)</li>
+                                <li>Map Base: Google Map Tiles API (3D)</li>
+                                <li>Heat Data: Sentinel-2 (GeoTIFF / LST)</li>
+                                <li>AI Vision: Google Gemini</li>
+                                <li>Other Libraries: rasterio, numpy, html2canvas</li>
+                            </ul>
+                        </article>
+
+
+                        <article class="project-card">
+                            <h3>Folder Sorter</h3>
+                            <p class="subtitle">Academic Project</p>
+                            <div class="desc">
+                                <p>
+                                    A hierarchical file management system that creates and sorts nested folder/file relationships, 
+                                    utilizing JSON-based persistence, a GUI system designed with Java Swing, and JUnit testing to ensure code stability.
+                                </p>
+                            </div>
+                            
+                            <p class="stack">Tech Stack</p>
+                            <ul>
+                                <li>Frontend: Java Swing</li>
+                                <li>Backend: Java</li>
+                            </ul>
+                            
+                        </article>
+
+                    </div>
+                </div>
+            </section>
+    </main>
+
+    <footer></footer>
+</body>
+</html>
