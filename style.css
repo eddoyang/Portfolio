@@ -1,3 +1,60 @@
+
+/* --------- Properties --------- */
+:root {
+    --bg: #ffffff;      /* page background */
+    --ink: #1a1a1a;     /* main text */
+    --muted: #5c626e;   /* secondary text */
+    --accent: #4f46e5;  /* highlight color */
+    --hover: #817dd0;   /* highlight hover */
+    --line: #dcdcdc;    /* borders and dividers */
+
+    --font-display: "Short Stack", cursive;
+    --font-body: "Sniglet", system-ui;
+
+    --text-sm: 0.875rem;   /* subtitles/captions */
+    --text-base: 1rem;     /* body text */
+    --text-lg: 1.25rem;    /* lead paragraph, subheadings */
+    --text-xl: 2rem;       /* section headings (h2) */
+    --text-2xl: 3.5rem;    /* the hero name (h1) */
+}
+
+
+/* --------- Fonts --------- */
+body {
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+}
+
+h1, h2, h3 {
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    margin-bottom: 0.5em;
+}
+
+.hero h1 {
+    font-size: var(--text-2xl);
+    line-height: 1.05;
+}
+
+h2 {
+    font-size: var(--text-xl);
+    line-height: 1.2;
+}
+
+.lead {
+    font-size: var(--text-lg);
+}
+
+.subtitle {
+    font-size: var(--text-sm);
+    color: var(--muted);
+}
+
+.stack {
+    font-family: var(--font-display);
+}
+
+/* --------- General --------- */
 *,
 *::before,
 *::after {
@@ -12,8 +69,9 @@
 body {
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
+    background: var(--bg);
+    color: var(--ink)
 }
-
 
 img {
     display: block;
@@ -28,17 +86,21 @@ img {
 }
 
 section {
-    padding-block: 50px;
+    padding-block: 80px;
 }
 
+/* --------- Links --------- */
 
-nav {
-    display: flex;
-    gap: 24px;
+a {
+    color: var(--accent);
+    text-decoration: none;
 }
 
+a:hover {
+    color: var(--hover);
+}
 
-/* --------- Header and hero --------- */
+/* --------- Header and Hero --------- */
 
 header {
     position: sticky;
@@ -48,6 +110,16 @@ header {
     justify-content: space-between;
     padding-block: 20px;
     padding-inline: 20px;
+    background: var(--bg);
+    z-index: 10;
+}
+header a {
+    color: var(--ink);
+    text-decoration: none;
+}
+nav {
+    display: flex;
+    gap: 24px;
 }
 
 .hero {
@@ -55,11 +127,6 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: center;
-}
-
-.hero h1 {
-    font-size: 3rem; /* placeholder */
-    line-height: 1.1;
 }
 
 .hero p {
@@ -75,11 +142,11 @@ header {
 }
 
 .about-list {
-  padding-left: 1.5rem;
+    padding-left: 1.5rem;
 }
 
 .about-list li {
-  margin-bottom: 8px; 
+    margin-bottom: 8px; 
 }
 
 /* --------- Projects --------- */
@@ -91,11 +158,12 @@ header {
 }
 
 .project-card {
-    border: 1px solid #000;
+    border: 3px solid var(--line);
+    border-radius: 12px;
     padding: 24px;
     display: flex;           
     flex-direction: column;
-    gap: 12px;   
+    gap: 12px;
 }
 
 .project-card img {
@@ -104,15 +172,17 @@ header {
     object-fit: cover;
 }
 
+.project-card:hover {
+    border-color: var(--accent);
+}
 
+.project-card h3, .stack, .subtitle{
+    text-align: center;
+}
 
-/* .project-card .desc {
-    
-} */
-
-
-
-
+/* --------- Footer --------- */
 footer {
     padding-block: 40px;
 }
+
+
