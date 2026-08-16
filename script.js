@@ -1,13 +1,12 @@
 /* --------- Contact Form --------- */
-const form = document.getElementById('form');
+const form = document.querySelector('.contact-form')
 const submitBtn = form.querySelector('button[type="submit"]');
 
 form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     const formData = new FormData(form);
-    formData.append("access_key", "c8bf1978-dbd7-43e2-bbab-813b7468dd5a");
-
+    
     const originalText = submitBtn.textContent;
 
     submitBtn.textContent = "Sending...";

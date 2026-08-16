@@ -8,6 +8,7 @@
     --hover: #817dd0;   /* highlight hover */
     --line: #dcdcdc;    /* borders and dividers */
     --header: #b5b2ec;
+    --white: white;
 
 
     --font-display: "Short Stack", cursive;
@@ -126,7 +127,7 @@ header a {
 }
 
 header a:hover {
-    color: white;
+    color: var(--white);
 }
 
 nav {
@@ -203,7 +204,7 @@ nav a:first-child {
 #contact {
     display: flex;
     gap: 48px;
-    justify-content: left;
+    justify-content: start;
 }
 
 .details {
@@ -251,7 +252,7 @@ nav a:first-child {
     border-radius: 8px;
     
     font-family: var(--font-display);
-    font-size: 15px;
+    font-size: var(--font-display);
     cursor: pointer;
 }
 
