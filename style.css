@@ -125,6 +125,10 @@ header a {
     text-decoration: none;
 }
 
+header a:hover {
+    color: white;
+}
+
 nav {
     display: flex;
     gap: 24px;
