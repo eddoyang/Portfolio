@@ -1,2 +1,2 @@
 # Portfolio
-Personal portfolio built from scratch using HTML/CSS/JS
+Personal portfolio built using HTML/CSS/JS

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <meta charset="UTF-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>Portfolio</title>
+    </head>
+
+    <body>
+
+        <header>
+            <div class="container">
+                <a href="#" class="logo">Me</a>
+                <nav> 
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+            </div>
+        </header>
+
+
+        <main>
+            <section id="me"> 
+                <h1>Eddie Yang</h1>
+                <h2> A little about me</h2>
+                <p>
+                    My name is Eddie Yang. I am pursuing a BCs Computer Science degree with an option in AI. I am also in the Co-op program! I enjoy the full arc of developing software and making models.
+                    I'm aiming for a career as an ML/AI or software engineer, where I can keep building systems that solve tangible problems.
+                </p>
+                <h2>Technical Skills</h2>
+                <ul>
+                    <li>Java</li>
+                    <li>Python</li>
+                    <li>C/C++</li>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>R</li>
+                    <li>scikit-learn</li>
+                </ul>
+            </section>
+
+
+            <section id="projects"> 
+                <div class="container">
+                    <h2>Projects</h2>
+
+                    <article class="project">
+                        <img src="images/Momentum.png" alt="Momentum Logo" width="400" height="250">
+                        
+                        <h3>Momentum</h3>
+                        <p class="subtitle">Personal Project</p>
+
+                        <p><a href="https://momentum-f0p6.onrender.com">Live Demo</a></p>
+                        <p><a href="https://github.com/eddoyang/Momentum">Repo</a></p>
+                        <p>
+                            Momentum is a personal/learning project that lets you add, complete, and remove tasks, with a focus on hour-by-hour deadline ordering. 
+                            The app sorts tasks by their closest upcoming deadline so the next thing you need to work on is always front and center.
+                        </p>
+                        <p>Tech Stack</p>
+                        <ul>
+                            <li>Backend: Java 21, Spring Boot 4</li>
+                            <li>Persistence: JSON file on disk</li>
+                            <li>Frontend: Vanilla HTML, CSS, and JavaScript</li>
+                            <li> Build tool: Maven </li>
+                        </ul>
+
+                    </article>
+
+                    <article class="project">
+                        <img src="images/ReLeaf.png" alt="ReLeaf Logo" width="400" height="250">
+                        <h3>ReLeaf</h3>
+                        <p class="subtitle">Hackathon Project — Gemini API Award</p>
+
+                            
+                        <p>
+                            <a href="https://releaf-city.vercel.app/">Live Demo</a>
+                            <a href="https://releaf-backend.onrender.com/docs">Backend API</a>
+                        </p>
+                        <p><a href="https://youtu.be/P60QWDik0zc">Demo Video</a></p>
+                        <p><a href="https://github.com/anthonyl8/ReLeaf"> Repo </a></p>
+
+                        <p>
+                            ReLeaf is a smart urban planning tool designed to help cities and communities combat the Urban Heat Island (UHI) effect. It combines 
+                            photorealistic 3D city visualization, real satellite thermal data, and Google's Gemini AI to provide actionable insights for greener, cooler cities.
+                        </p>
+                        <p>Tech Stack</p>
+                        <ul>
+                            <li>Frontend: React + Vite + Deck.gl</li>
+                            <li>Backend: Python (FastAPI)</li>
+                            <li>Map Base: Google Map Tiles API (3D)</li>
+                            <li>Heat Data: Sentinel-2 (GeoTIFF / LST)</li>
+                            <li>AI Vision: Google Gemini</li>
+                            <li>Other Libraries: rasterio, numpy, html2canvas</li>
+                        </ul>
+                    </article>
+
+                    <article class="project">
+                        <h3>Folder Sorter</h3>
+                        <p class="subtitle">Academic Project</p>
+                        <p>
+                            A hierarchical file management system that creates and sorts nested folder/file relationships, 
+                            utilizing JSON-based persistence, a GUI system designed with Java Swing, and JUnit testing to ensure code stability.
+                        </p>
+                        <p>Tech Stack</p>
+                        <ul>
+                            <li>Frontend: Java Swing</li>
+                            <li>Backend: Java</li>
+                        </ul>
+                    </article>
+                </div>
+            </section>
+        </main>
+
+
+        <footer>
+            <section id="contact"> 
+                <h2>Contacts</h2>
+                <p>eddieyang2828@gmail.com</p>
+            </section>
+        </footer>
+
+    </body>
+
+</html>
