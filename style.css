@@ -262,6 +262,13 @@ header nav a:first-child {
         translate(-50%, -50%);
 }
 
+.orbit-nav li:nth-child(1) { --a: -10deg; }   /* Me */
+.orbit-nav li:nth-child(2) { --a: 10deg; }   /* About */
+.orbit-nav li:nth-child(3) { --a: 30deg; }   /* Projects */
+.orbit-nav li:nth-child(4) { --a: 50deg; }   /* Contact */
+.orbit-nav li:nth-child(5) { --a: 70deg; }   /* GitHub */
+.orbit-nav li:nth-child(6) { --a: 90deg; }   /* LinkedIn */
+
 
 .star {
     position: absolute;
