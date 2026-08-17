@@ -10,10 +10,22 @@
     --header: #b5b2ec;
     
 
-
     --white: white;
-    --moonglow: #F6F1D5;
 
+    /* moon */
+    --moonglow: #F6F1D5;
+    --underglow1: #ffffcc;
+    --underglow2: #bfbfa6;
+    --underglow3: #808080;
+    --underglow4: #404059;
+    --underglow5: #000033;
+
+    --innerglow: rgba(246, 241, 213, 0.45);
+    --outerglow: rgba(246, 241, 213, 0.20);
+    --shadows: rgba(0, 0, 0, 0.35);
+
+    --crater: #c6c6a2;
+    /* ------ */
 
     --flow1: #544a7d;
     --flow2: #ffd452;
@@ -117,14 +129,6 @@ section {
     transform: none;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .reveal {
-    opacity: 1;
-    transform: none;
-    transition: none;
-  }
-}
-
 /* --------- Links --------- */
 
 a {
@@ -196,20 +200,31 @@ nav a:first-child {
     justify-content: center;
     gap: 2rem;
 
-    background: linear-gradient(160deg, var(--moon1), var(--moon2), var(--moon3));
+    background: linear-gradient(180deg, var(--moon1), var(--moon2), var(--moon3));
     color: var(--moonglow);
     overflow: hidden;
-    
+
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-
-}
+} 
 
 .hero p {
     max-width: 45ch;
     margin-top: 2px;
 }
 
+/* --------- Moon --------- */
+.moon {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: transparent;
+    box-shadow: 52px 52px 0 0 var(--moonglow);   /* the crescent itself */
+    filter:
+        drop-shadow(0 0 25px rgba(246, 241, 213, 0.55))
+        drop-shadow(0 0 60px rgba(246, 241, 213, 0.25));   /* the glow */
+    animation: float 6s ease-in-out infinite;
+}
 
 
 /* --------- About --------- */
@@ -355,6 +370,12 @@ footer {
     header { animation: none; }
 
     .project-card:hover::before { animation: none; }
+    
+    .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
 }
 
 @keyframes flow {
@@ -372,3 +393,9 @@ footer {
 @keyframes spin {
     to { --angle: 360deg; }
 }
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-18px); }
+}
+
