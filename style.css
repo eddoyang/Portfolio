@@ -208,7 +208,9 @@ header nav a:first-child {
 } 
 
 .hero h1 {
-    margin-top: 100px;
+    position: absolute;
+    top: 10vh;
+    z-index: 2;
 }
 
 /* --------- Moon and Stars--------- */
@@ -225,6 +227,13 @@ header nav a:first-child {
     
     transform: translateX(-11vmin);
     animation: float 6s ease-in-out infinite;
+}
+
+.moon-stage {
+    position: relative;
+    width: 40vmin;
+    height: 40vmin;
+    flex: none;
 }
 
 .star {
