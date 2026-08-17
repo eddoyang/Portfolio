@@ -4,12 +4,23 @@
     --bg: #ffffff;      /* page background */
     --ink: #1a1a1a;     /* main text */
     --muted: #5c626e;   /* secondary text */
-    --accent: #4f46e5;  /* highlight color */
-    --hover: #817dd0;   /* highlight hover */
+    --accent: #302c82;  /* highlight color */
+    --hover: #3b35aa;   /* highlight hover */
     --line: #dcdcdc;    /* borders and dividers */
     --header: #b5b2ec;
-    --white: white;
+    
 
+
+    --white: white;
+    --moonglow: #F6F1D5;
+
+
+    --flow1: #544a7d;
+    --flow2: #ffd452;
+
+    --moon1: #0f2027;
+    --moon2: #203a43;
+    --moon3: #2c5364;
 
     --font-display: "Short Stack", cursive;
     --font-body: "Sniglet", system-ui;
@@ -88,8 +99,30 @@ img {
     padding-inline: 24px; /* keeps content off the screen edges on mobile */
 }
 
+
 section {
     padding-block: 10px;
+}
+
+/* --------- Reveal --------- */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.3s ease;
+}
+
+.reveal.is-visible {
+    opacity: 1;
+    transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
 
 /* --------- Links --------- */
@@ -97,10 +130,19 @@ section {
 a {
     color: var(--accent);
     text-decoration: none;
+    transition: opacity 0.2s ease;
 }
 
 a:hover {
     color: var(--hover);
+    opacity: 0.7;
+}
+
+a:focus-visible,
+.project-card:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
 }
 
 /* --------- Header --------- */
@@ -112,32 +154,37 @@ header {
     padding-block: 15px;
     padding-inline: 20px;
 
-    background: var(--header);
+    background: linear-gradient(120deg, var(--moon1), var(--moon2), var(--moon3));
     z-index: 10;
 
-    border-bottom: 2px solid var(--line);
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
 
+    background-size: 200% 200%; 
+    animation: flow 6s ease infinite;
 }
 
+
 header a {
-    color: var(--ink);
+    color: var(--moonglow);
     text-decoration: none;
+    transition: opacity 0.2s ease;
 }
 
 header a:hover {
     color: var(--white);
+    opacity: 0.7;
+    opacity: 1;
 }
 
 nav {
     display: flex;
     gap: 24px;
-    flex: 1;                /* let the nav stretch across the full header width */
+    flex: 1;
 }
 
 nav a:first-child {
-    margin-right: auto;     /* pushes Me left, shoves the rest to the right */
+    margin-right: auto;
 }
 
 
@@ -148,12 +195,19 @@ nav a:first-child {
     flex-direction: column;
     justify-content: center;
     padding-block: 0px;
+
+ 
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+
 }
 
 .hero p {
     max-width: 45ch;
     margin-top: 2px;
 }
+
+
 
 /* --------- About --------- */
 
@@ -178,12 +232,33 @@ nav a:first-child {
 }
 
 .project-card {
-    border: 3px solid var(--line);
+    position: relative;
+    border: none;
     border-radius: 12px;
+    background: var(--bg);     
+
+    
     padding: 24px;
     display: flex;           
     flex-direction: column;
     gap: 12px;
+
+}
+
+.project-card::before {
+    content: "";
+    position: absolute;
+    inset: -3px;
+    border-radius: 14px;
+    background: conic-gradient(from var(--angle), var(--flow1), var(--flow2));
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.project-card:hover::before {
+    opacity: 1;
+    animation: spin 8s linear infinite;
 }
 
 .project-card img {
@@ -192,9 +267,6 @@ nav a:first-child {
     object-fit: cover;
 }
 
-.project-card:hover {
-    border-color: var(--accent);
-}
 
 .project-card h3, .stack, .subtitle{
     text-align: center;
@@ -247,12 +319,12 @@ nav a:first-child {
     padding: 10px 20px;
     
     background: var(--accent);
-    color: #fff;
+    color: var(--white);
     border: none;
     border-radius: 8px;
     
     font-family: var(--font-display);
-    font-size: var(--font-display);
+    font-size: var(--text-sm);
     cursor: pointer;
 }
 
@@ -264,4 +336,45 @@ nav a:first-child {
 
 footer {
     margin-bottom: 200px;
+}
+
+
+/* --------- Mobile Sizing --------- */
+@media (max-width: 640px) {
+    nav {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+}
+
+/* --------- Animations --------- */
+@media (prefers-reduced-motion: reduce) {
+    .hero { animation: none; }
+
+    .project-card:hover {animation: none;}
+
+    .project-card:hover::before { animation: none; }
+
+}
+
+@keyframes flow {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes borderflow {
+    0%   { border-color: var(--flow1); }
+    50%  { border-color: var(--flow2); }
+    100% { border-color: var(--flow1); }
+}
+
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+@keyframes spin {
+    to { --angle: 360deg; }
 }
