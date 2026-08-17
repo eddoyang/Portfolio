@@ -234,22 +234,11 @@ header nav a:first-child {
     margin-bottom: 100px;
 } 
 
-.hero h1 {
-    position: relative;
-}
-
 
 .hero-home {
     min-height: 100vh;
     gap: 2rem;
 }
-
-.hero-home h1 {
-    position: absolute;
-    top: 10vh;
-    z-index: 2;
-}
-
 
 /* --------- Moon, Stars, Orbit--------- */
 .moon {
@@ -274,16 +263,21 @@ header nav a:first-child {
     transform: translateY(-11vmin);
 }
 
+.moon-name svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
 .moon-name {
     position: absolute;
-    top: calc(50% + 12vmin);
-    left: calc(50% - 2vmin);
+    top: calc(50% + 9.5vmin);
+    left: calc(50% - 1.5vmin);
     width: 80vmin;
     height: 80vmin;
-    transform: translate(-40%, 5%);
+    transform: translate(-50%, -50%);
     margin: 0;
     pointer-events: none;
-
     animation: namefloat 6s ease-in-out infinite;
 }
 
@@ -506,6 +500,7 @@ header nav a:first-child {
         gap: 12px;
     }
 
+
     .orbit-nav {
         position: static;
         width: auto;
@@ -577,6 +572,6 @@ header nav a:first-child {
 }
 
 @keyframes namefloat {
-    0%, 100% { transform: translate(-40%, 5%); }
-    50%      { transform: translate(-40%, calc(5% - 14px)); }
+    0%, 100% { transform: translate(-50%, -50%); }
+    50%      { transform: translate(-50%, calc(-50% - 14px)); }
 }
