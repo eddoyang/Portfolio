@@ -94,6 +94,7 @@ body {
 
 body.home {
     margin-bottom: 0;
+    background: linear-gradient(180deg, var(--moon1), var(--moon2), var(--moon3)) fixed;
 }
 
 img {
@@ -177,13 +178,13 @@ header a:hover {
     opacity: 1;
 }
 
-nav {
+header nav {
     display: flex;
     gap: 24px;
     flex: 1;
 }
 
-nav a:first-child {
+header nav a:first-child {
     margin-right: auto;
 }
 
@@ -195,6 +196,7 @@ nav a:first-child {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: 2rem;
 
     background: linear-gradient(180deg, var(--moon1), var(--moon2), var(--moon3));
@@ -211,17 +213,17 @@ nav a:first-child {
 
 /* --------- Moon and Stars--------- */
 .moon {
-    width: 50vmin;
-    height: 50vmin;
+    width: 40vmin;
+    height: 40vmin;
     border-radius: 50%;
     background: transparent;
-    box-shadow: 12vmin 12vmin 0 0 var(--moonglow);
+    box-shadow: 9.5vmin 9.5vmin 0 0 var(--moonglow);
     filter:
         drop-shadow(0 0 4vmin var(--glow1))
         drop-shadow(0 0 9vmin var(--glow2));
 
     
-    transform: translateX(-14vmin);
+    transform: translateX(-11vmin);
     animation: float 6s ease-in-out infinite;
 }
 
@@ -363,7 +365,7 @@ nav a:first-child {
 
 /* --------- Mobile Sizing --------- */
 @media (max-width: 640px) {
-    nav {
+    header nav {
         flex-wrap: wrap;
         gap: 12px;
     }
@@ -399,8 +401,8 @@ nav a:first-child {
 }
 
 @keyframes float {
-    0%, 100% { transform: translate(-14vmin, 0); }
-    50%      { transform: translate(-14vmin, -14px); }
+    0%, 100% { transform: translate(-11vmin, 0); }
+    50%      { transform: translate(-11vmin, -14px); }
 }
 
 @keyframes twinkle {
