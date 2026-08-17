@@ -213,7 +213,7 @@ header nav a:first-child {
     z-index: 2;
 }
 
-/* --------- Moon and Stars--------- */
+/* --------- Moon, Stars, Orbit--------- */
 .moon {
     width: 40vmin;
     height: 40vmin;
@@ -235,6 +235,33 @@ header nav a:first-child {
     height: 40vmin;
     flex: none;
 }
+
+.orbit-nav {
+    position: absolute;
+    top: calc(50% + 9.5vmin);
+    left: calc(50% - 1.5vmin);
+    width: 0;
+    height: 0;
+    z-index: 3;
+}
+
+.orbit-nav ul {
+    list-style: none;
+}
+
+.orbit-nav li {
+    position: absolute;
+    top: 0;
+    left: 0;
+    --r: 30vmin;
+
+    transform:
+        rotate(var(--a))
+        translate(var(--r))
+        rotate(calc(-1 * var(--a)))
+        translate(-50%, -50%);
+}
+
 
 .star {
     position: absolute;
