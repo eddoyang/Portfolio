@@ -14,17 +14,9 @@
 
     /* moon */
     --moonglow: #F6F1D5;
-    --underglow1: #ffffcc;
-    --underglow2: #bfbfa6;
-    --underglow3: #808080;
-    --underglow4: #404059;
-    --underglow5: #000033;
-
-    --innerglow: rgba(246, 241, 213, 0.45);
-    --outerglow: rgba(246, 241, 213, 0.20);
+    --glow1: rgba(246, 241, 213, 0.55);
+    --glow2: rgba(246, 241, 213, 0.25);
     --shadows: rgba(0, 0, 0, 0.35);
-
-    --crater: #c6c6a2;
     /* ------ */
 
     --flow1: #544a7d;
@@ -213,17 +205,31 @@ nav a:first-child {
     margin-top: 2px;
 }
 
-/* --------- Moon --------- */
+.hero h1 {
+    margin-top: 100px;
+}
+
+/* --------- Moon and Stars--------- */
 .moon {
     width: 200px;
     height: 200px;
     border-radius: 50%;
     background: transparent;
-    box-shadow: 52px 52px 0 0 var(--moonglow);   /* the crescent itself */
+    box-shadow: 52px 52px 0 0 var(--moonglow);
     filter:
-        drop-shadow(0 0 25px rgba(246, 241, 213, 0.55))
-        drop-shadow(0 0 60px rgba(246, 241, 213, 0.25));   /* the glow */
+        drop-shadow(0 0 25px var(--glow1))
+        drop-shadow(0 0 60px var(--glow2));   /* the glow */
     animation: float 6s ease-in-out infinite;
+}
+
+.star {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: #fff;
+    border-radius: 50%;
+    opacity: 0.7;
+    animation: twinkle 3s ease-in-out infinite;
 }
 
 
@@ -399,3 +405,7 @@ footer {
     50%      { transform: translateY(-18px); }
 }
 
+@keyframes twinkle {
+    0%, 100% { opacity: 0.15; transform: scale(0.8); }
+    50%      { opacity: 0.9;  transform: scale(1.3); }
+}
