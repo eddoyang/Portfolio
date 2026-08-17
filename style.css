@@ -185,6 +185,7 @@ header {
     padding-inline: 20px;
 
     background: linear-gradient(120deg, var(--moon1), var(--moon2), var(--moon3));
+    border-bottom: 1px solid var(--moonglow);
     z-index: 10;
 
     background-size: 200% 200%; 
