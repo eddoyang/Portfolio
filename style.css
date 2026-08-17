@@ -230,6 +230,8 @@ header nav a:first-child {
 
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
+
+    margin-bottom: 100px;
 } 
 
 .hero h1 {
