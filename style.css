@@ -88,7 +88,12 @@ body {
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     background: var(--bg);
-    color: var(--ink)
+    color: var(--ink);
+    margin-bottom: 200px;
+}
+
+body.home {
+    margin-bottom: 0;
 }
 
 img {
@@ -185,11 +190,11 @@ nav a:first-child {
 
 /* --------- Hero --------- */
 .hero {
-    min-height: 60vh;
+    position: relative;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     gap: 2rem;
 
     background: linear-gradient(180deg, var(--moon1), var(--moon2), var(--moon3));
@@ -200,25 +205,23 @@ nav a:first-child {
     border-bottom-right-radius: 10px;
 } 
 
-.hero p {
-    max-width: 45ch;
-    margin-top: 2px;
-}
-
 .hero h1 {
     margin-top: 100px;
 }
 
 /* --------- Moon and Stars--------- */
 .moon {
-    width: 200px;
-    height: 200px;
+    width: 50vmin;
+    height: 50vmin;
     border-radius: 50%;
     background: transparent;
-    box-shadow: 52px 52px 0 0 var(--moonglow);
+    box-shadow: 12vmin 12vmin 0 0 var(--moonglow);
     filter:
-        drop-shadow(0 0 25px var(--glow1))
-        drop-shadow(0 0 60px var(--glow2));   /* the glow */
+        drop-shadow(0 0 4vmin var(--glow1))
+        drop-shadow(0 0 9vmin var(--glow2));
+
+    
+    transform: translateX(-14vmin);
     animation: float 6s ease-in-out infinite;
 }
 
@@ -231,7 +234,6 @@ nav a:first-child {
     opacity: 0.7;
     animation: twinkle 3s ease-in-out infinite;
 }
-
 
 /* --------- About --------- */
 
@@ -358,10 +360,6 @@ nav a:first-child {
 
 /* --------- Footer --------- */
 
-footer {
-    margin-bottom: 200px;
-}
-
 
 /* --------- Mobile Sizing --------- */
 @media (max-width: 640px) {
@@ -401,8 +399,8 @@ footer {
 }
 
 @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50%      { transform: translateY(-18px); }
+    0%, 100% { transform: translate(-14vmin, 0); }
+    50%      { transform: translate(-14vmin, -14px); }
 }
 
 @keyframes twinkle {
