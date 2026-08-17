@@ -12,11 +12,13 @@
 
     --white: white;
 
-    /* moon */
+    /* moon + orbit*/
     --moonglow: #F6F1D5;
+    --moonglow-alpha: rgba(246, 241, 213, 0);
     --glow1: rgba(246, 241, 213, 0.55);
     --glow2: rgba(246, 241, 213, 0.25);
     --shadows: rgba(0, 0, 0, 0.35);
+    --orbit-background: rgba(246, 241, 213, 0.06);
     /* ------ */
 
     --flow1: #544a7d;
@@ -70,6 +72,22 @@ h2 {
 
 .stack {
     font-family: var(--font-display);
+}
+
+.orbit-nav a {
+    font-family: var(--font-display);
+    font-size: clamp(0.8rem, 1.7vmin, 1.05rem);
+    letter-spacing: 0.04rem;
+    color: var(--moonglow);
+    text-decoration: none;
+    box-shadow: 0 0 0 0 var(--moonglow-alpha);
+
+    transition:
+        color 0.25s ease,
+        border-color 0.25s ease,
+        background 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.35s ease;
 }
 
 /* --------- General --------- */
@@ -262,12 +280,24 @@ header nav a:first-child {
         translate(-50%, -50%);
 }
 
-.orbit-nav li:nth-child(1) { --a: -10deg; }   /* Me */
-.orbit-nav li:nth-child(2) { --a: 10deg; }   /* About */
-.orbit-nav li:nth-child(3) { --a: 30deg; }   /* Projects */
+.orbit-nav a {
+    display: block;
+    white-space: nowrap;
+    
+    padding: 0.55rem 1.15rem;
+    border-radius: 999px;
+    border: 1px solid var(--white);
+    background: var(--orbit-background);
+    backdrop-filter: blur(4px);
+
+}
+
+.orbit-nav li:nth-child(1) { --a: -40deg; }   /* Me */
+.orbit-nav li:nth-child(2) { --a: -10deg; }   /* About */
+.orbit-nav li:nth-child(3) { --a: 20deg; }   /* Projects */
 .orbit-nav li:nth-child(4) { --a: 50deg; }   /* Contact */
-.orbit-nav li:nth-child(5) { --a: 70deg; }   /* GitHub */
-.orbit-nav li:nth-child(6) { --a: 90deg; }   /* LinkedIn */
+.orbit-nav li:nth-child(5) { --a: 80deg; }   /* GitHub */
+.orbit-nav li:nth-child(6) { --a: 110deg; }   /* LinkedIn */
 
 
 .star {
