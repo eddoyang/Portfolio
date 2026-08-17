@@ -12,13 +12,23 @@
 
     --white: white;
 
+
     /* moon + orbit*/
     --moonglow: #F6F1D5;
     --moonglow-alpha: rgba(246, 241, 213, 0);
     --glow1: rgba(246, 241, 213, 0.55);
     --glow2: rgba(246, 241, 213, 0.25);
     --shadows: rgba(0, 0, 0, 0.35);
+
+
     --orbit-background: rgba(246, 241, 213, 0.06);
+    --orbit-text-hover: #fffdf2;
+    --orbit-text-hover-glow: rgba(246, 241, 213, 0.7);
+    --orbit-border-hover: rgba(246, 241, 213, 0.9);
+    --orbit-background-hover: rgba(255, 255, 255, 0.5);
+    --orbit-outerglow1: rgba(246, 241, 213, 0.45);
+    --orbit-outerglow2: rgba(246, 241, 213, 0.22);
+    --orbit-innerglow: rgba(246, 241, 213, 0.25);
     /* ------ */
 
     --flow1: #544a7d;
@@ -261,6 +271,7 @@ header nav a:first-child {
     width: 0;
     height: 0;
     z-index: 3;
+    animation: orbitfloat 6s ease-in-out infinite;
 }
 
 .orbit-nav ul {
@@ -291,6 +302,27 @@ header nav a:first-child {
     backdrop-filter: blur(4px);
 
 }
+
+.orbit-nav a:hover,
+.orbit-nav a:focus-visible {
+    color: var(--orbit-text-hover);
+    opacity: 1;                                   
+    border-color: var(--orbit-border-hover);
+    background: var(--orbit-background-hover);
+    text-shadow: 0 0 12px var(--orbit-text-hover-glow);
+    transform: scale(1.08);
+
+    box-shadow:
+        0 0 18px 2px  var(--orbit-outerglow1),
+        0 0 42px 10px var(--orbit-outerglow2),
+        inset 0 0 14px var(--orbit-innerglow);
+}
+
+.orbit-nav a:focus-visible {
+    outline: 2px solid var(--moonglow);
+    outline-offset: 4px;
+}
+
 
 .orbit-nav li:nth-child(1) { --a: -40deg; }   /* Me */
 .orbit-nav li:nth-child(2) { --a: -10deg; }   /* About */
@@ -481,4 +513,9 @@ header nav a:first-child {
 @keyframes twinkle {
     0%, 100% { opacity: 0.15; transform: scale(0.8); }
     50%      { opacity: 0.9;  transform: scale(1.3); }
+}
+
+@keyframes orbitfloat {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-14px); }
 }
