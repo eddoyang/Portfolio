@@ -271,6 +271,26 @@ header nav a:first-child {
     transform: translateY(-11vmin);
 }
 
+.moon-name {
+    position: absolute;
+    top: calc(50% + 12vmin);
+    left: calc(50% - 2vmin);
+    width: 80vmin;
+    height: 80vmin;
+    transform: translate(-40%, 5%);
+    margin: 0;
+    pointer-events: none;
+
+    animation: namefloat 6s ease-in-out infinite;
+}
+
+.moon-name text {
+    font-family: var(--font-display);
+    font-size: 13px;
+    letter-spacing: 2px;
+    fill: var(--moonglow);
+}
+
 .orbit-nav {
     position: absolute;
     top: calc(50% + 9.5vmin);
@@ -549,4 +569,9 @@ header nav a:first-child {
 @keyframes orbitfloat {
     0%, 100% { transform: translateY(0); }
     50%      { transform: translateY(-14px); }
+}
+
+@keyframes namefloat {
+    0%, 100% { transform: translate(-40%, 5%); }
+    50%      { transform: translate(-40%, calc(5% - 14px)); }
 }
