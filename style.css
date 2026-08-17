@@ -155,8 +155,8 @@ a:hover {
 a:focus-visible,
 .project-card:focus-visible,
 button:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 3px;
+outline: 2px solid var(--accent);
+outline-offset: 3px;
 }
 
 /* --------- Header --------- */
