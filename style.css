@@ -121,7 +121,7 @@ body {
 }
 
 body.home {
-    margin-bottom: 0;
+    margin-bottom: -100px;
     background: linear-gradient(180deg, var(--moon1), var(--moon2), var(--moon3)) fixed;
 }
 
