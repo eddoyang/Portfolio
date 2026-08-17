@@ -259,7 +259,6 @@ header nav a:first-child {
         drop-shadow(0 0 4vmin var(--glow1))
         drop-shadow(0 0 9vmin var(--glow2));
 
-    
     transform: translateX(-11vmin);
     animation: float 6s ease-in-out infinite;
 }
@@ -269,6 +268,7 @@ header nav a:first-child {
     width: 40vmin;
     height: 40vmin;
     flex: none;
+    transform: translateY(-11vmin);
 }
 
 .orbit-nav {
