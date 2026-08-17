@@ -324,12 +324,11 @@ header nav a:first-child {
 }
 
 
-.orbit-nav li:nth-child(1) { --a: -40deg; }   /* Me */
-.orbit-nav li:nth-child(2) { --a: -10deg; }   /* About */
-.orbit-nav li:nth-child(3) { --a: 20deg; }   /* Projects */
-.orbit-nav li:nth-child(4) { --a: 50deg; }   /* Contact */
-.orbit-nav li:nth-child(5) { --a: 80deg; }   /* GitHub */
-.orbit-nav li:nth-child(6) { --a: 110deg; }   /* LinkedIn */
+.orbit-nav li:nth-child(1) { --a: -10deg; }   /* About */
+.orbit-nav li:nth-child(2) { --a: 20deg; }   /* Projects */
+.orbit-nav li:nth-child(3) { --a: 50deg; }   /* Contact */
+.orbit-nav li:nth-child(4) { --a: 80deg; }   /* GitHub */
+.orbit-nav li:nth-child(5) { --a: 110deg; }   /* LinkedIn */
 
 
 .star {
@@ -474,6 +473,26 @@ header nav a:first-child {
         flex-wrap: wrap;
         gap: 12px;
     }
+
+    .orbit-nav {
+        position: static;
+        width: auto;
+        height: auto;
+        margin-top: 2.5rem;
+        animation: none;
+    }
+
+    .orbit-nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.6rem;
+    }
+    
+    .orbit-nav li {
+        position: static;
+        transform: none;
+    }
 }
 
 /* --------- Animations --------- */
@@ -487,6 +506,11 @@ header nav a:first-child {
         transform: none;
         transition: none;
     }
+
+    .moon, .star { animation: none; }
+    .orbit-nav, .orbit-nav a { animation: none; }
+    .orbit-nav a:hover,
+    .orbit-nav a:focus-visible { transform: none; }
 }
 
 @keyframes flow {
