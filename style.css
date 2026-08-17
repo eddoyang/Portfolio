@@ -221,6 +221,7 @@ header nav a:first-child {
 .hero-home {
     min-height: 100vh;
     gap: 2rem;
+    margin-bottom: 0;
 }
 
 /* --------- Moon, Stars, Orbit--------- */
