@@ -80,10 +80,6 @@ h2 {
     color: var(--muted);
 }
 
-.stack {
-    font-family: var(--font-display);
-}
-
 /* --------- General --------- */
 *,
 *::before,
@@ -445,9 +441,43 @@ header nav a:first-child {
 
 }
 
-
 .project-card h3, .stack, .subtitle{
     text-align: center;
+}
+
+
+.stack-list {
+    gap: 10px;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 10px;
+    container-type: inline-size;
+}
+
+.stack li {
+    font-family: var(--font-display);
+    font-size: clamp(0.7rem, 1.8cqi, 1rem);
+    flex: 0 0 auto;
+    max-width: 100%;
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.85em 1.7em;
+    margin-bottom:5px;
+    border-radius: 999px;
+
+    background: var(--moon3); 
+    color: var(--moonglow);
+    box-shadow: 0 0 0 0 var(--moonglow-alpha);
+    backdrop-filter: blur(4px);
+    box-shadow:
+        0 0 18px 2px  var(--orbit-outerglow1),
+        0 0 42px 10px var(--orbit-outerglow2),
+        inset 0 0 14px var(--orbit-innerglow);
 }
 
 /* --------- Contact --------- */
