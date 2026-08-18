@@ -15,7 +15,7 @@
 
     /* moon + orbit*/
     --moonglow: #F6F1D5;
-    --moonglow-alpha: rgba(246, 241, 213, 0);
+    --moonglow-alpha: rgba(246, 241, 213, 0.5);
     --glow1: rgba(246, 241, 213, 0.55);
     --glow2: rgba(246, 241, 213, 0.25);
     --shadows: rgba(0, 0, 0, 0.35);
@@ -309,13 +309,6 @@ header nav a:first-child {
     color: var(--moonglow);
     text-decoration: none;
     box-shadow: 0 0 0 0 var(--moonglow-alpha);
-
-    transition:
-        color 0.25s ease,
-        border-color 0.25s ease,
-        background 0.25s ease,
-        transform 0.25s ease,
-        box-shadow 0.35s ease;
     
     padding: 0.55em 1.15em;
     border-radius: 999px;
@@ -323,6 +316,12 @@ header nav a:first-child {
     background: var(--orbit-background);
     backdrop-filter: blur(4px);
 
+    transition:
+        color 0.25s ease,
+        border-color 0.25s ease,
+        background 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.35s ease;
 }
 
 .orbit-nav a:hover,
@@ -369,12 +368,35 @@ header nav a:first-child {
     max-width: 65ch;
 }
 
-.about-list {
-    padding-left: 1.5rem;
+.skills h3 {
+    margin: 0 0 0.5rem;
+}
+.skills-list {
+    gap: 0.5rem 1.5rem;
+    list-style: none;
+    columns: 5;
+    margin-bottom: 30px;
+    margin-top: 30px;
 }
 
-.about-list li {
-    margin-bottom: 8px; 
+.skills-list li {
+    break-inside: avoid;
+    text-align: center;
+    margin-bottom:10px;
+    border-radius: 999px;
+
+    background: var(--moon3); 
+    letter-spacing: 0.04em;
+    color: var(--moonglow);
+    text-decoration: none;
+    box-shadow: 0 0 0 0 var(--moonglow-alpha);
+    backdrop-filter: blur(4px);
+
+    box-shadow:
+        0 0 18px 2px  var(--orbit-outerglow1),
+        0 0 42px 10px var(--orbit-outerglow2),
+        inset 0 0 14px var(--orbit-innerglow);
+
 }
 
 /* --------- Projects --------- */
