@@ -538,8 +538,8 @@ header nav a:first-child {
     margin-top: 16px;
     padding: 10px 20px;
     
-    background: var(--accent);
-    color: var(--white);
+    background: var(--moon2);
+    color: var(--moonglow);
     border: none;
     border-radius: 8px;
     
@@ -549,7 +549,7 @@ header nav a:first-child {
 }
 
 .contact-form button:hover {
-    background: var(--hover);
+    background: var(--moon3);
 }
 
 /* --------- Footer --------- */
