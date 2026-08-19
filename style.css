@@ -211,6 +211,8 @@ header nav a:first-child {
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     margin-bottom: 40px;
+
+    animation: fadeInPage 5s ease;
 } 
 
 
@@ -650,4 +652,13 @@ header nav a:first-child {
 @keyframes namefloat {
     0%, 100% { transform: translate(-50%, -50%); }
     50%      { transform: translate(-50%, calc(-50% - 14px)); }
+}
+
+@keyframes fadeInPage {
+    from {
+        opacity: 0;
+    }
+    to {
+    opacity: 1;
+    }
 }
