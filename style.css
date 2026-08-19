@@ -211,8 +211,6 @@ header nav a:first-child {
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     margin-bottom: 40px;
-
-    animation: fadeInPage 5s ease;
 } 
 
 
@@ -220,6 +218,7 @@ header nav a:first-child {
     min-height: 100vh;
     gap: 2rem;
     margin-bottom: 0;
+    animation: fadeInPage 5s ease;
 }
 
 /* --------- Moon, Stars, Orbit--------- */
