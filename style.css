@@ -11,6 +11,7 @@
     
 
     --white: white;
+    --black: black;
 
 
     /* moon + orbit*/
@@ -97,7 +98,6 @@ body {
     -webkit-font-smoothing: antialiased;
     background: var(--bg);
     color: var(--ink);
-    margin-bottom: 200px;
 }
 
 body.home {
@@ -557,6 +557,23 @@ header nav a:first-child {
 }
 
 /* --------- Footer --------- */
+
+footer{
+    margin-top: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    
+    color: var(--black);
+    text-align: center;
+}
+
+
+footer.home{
+    margin-top: 0px;
+    color: var(--moonglow);
+    text-align: center;
+}
 
 
 /* --------- Mobile Sizing --------- */
