@@ -51,3 +51,13 @@ const observer = new IntersectionObserver((entries) => {
 });
 
 items.forEach((item) => observer.observe(item));
+
+/* --------- Old page links: land on the moon, then glide to the section --------- */
+const to = new URLSearchParams(location.search).get("to");
+const dest = to && document.getElementById(to);
+
+if (dest) {
+    history.replaceState(null, "", "/#" + to);
+    window.scrollTo(0, 0);
+    setTimeout(() => dest.scrollIntoView({ behavior: "smooth" }), 600);
+}
