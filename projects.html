@@ -52,22 +52,31 @@
                 <div class="projects-grid">
                     <article class="project-card">
                         <div class="reveal">
-                            <div class="img-placeholder"></div>
-                            <h3>Zoned · Chatbot</h3>
-                            <p class="subtitle">Personal Project · In Progress </p>
+                            <img src="images/eddo.jpg" alt="Mini Eddo Logo">
+                            <h3>Zoned</h3>
+                            <p class="subtitle">Citation-grounded Document Q&amp;A · 07/2026 – Present</p>
                             <p><a href="https://github.com/eddoyang/zoned-chatbot" target="_blank"
                                     rel="noopener noreferrer">Repo</a></p>
                             <div class="desc">
-                                <p style="margin-bottom: 5px";>
-                                    A Retrieval-augmented generation (RAG) chatbot that answers questions grounded solely in a set of user uploaded documents, 
-                                    with an explicit refusal when the answer isn't there.
+                                <p style="margin-bottom: 5px;">
+                                    A retrieval-augmented generation (RAG) system that answers questions using only a set of uploaded
+                                    documents, and explicitly refuses when the answer isn't there.
                                 </p>
-                                <p> 
-                                    Upload a set of PDFs, ask a question, and Zoned retrieves the relevant passages, answers from those passages alone, 
-                                    and cites the document and page behind every claim.
-                                    If the document doesn't cover it, Zoned lets you know rather than guessing. A 36-question evaluation set scoring refusal accuracy, source attribution and factual correctness measured
-                                    23/23 document-level recall, 19/23 top-1 attribution, 10/10 correct refusals, zero fabricated answers across 23 answerable questions, with 2 unaswerable questions left untested for the 
-                                    baseline.
+                                <p style="margin-bottom: 5px;">
+                                    Upload a set of PDFs, ask a question, and Zoned retrieves the relevant passages, answers from those
+                                    passages alone, and cites the document and page behind every claim. PDFs are parsed with Docling,
+                                    embedded with the OpenAI API, and answered by the Claude API.
+                                </p>
+                                <p style="margin-bottom: 5px;">
+                                    Everything lives in a single PostgreSQL + pgvector schema (documents, chunks, and 1536-dim embeddings),
+                                    with retrieval written as raw SQL over psycopg 3, an HNSW cosine index, a generated tsvector column,
+                                    and Alembic migrations. Ingestion is idempotent: SHA-256 content hashing lets renamed or duplicated files
+                                    skip re-parsing, and per-document transactions isolate mid-batch failures, cutting re-runs to seconds.
+                                </p>
+                                <p>
+                                    On a 33-question evaluation set it scored 23/23 document-level recall, 19/23 top-1 attribution,
+                                    10/10 correct refusals, and zero fabricated answers, with every ranking miss traced to nearly
+                                    identical document pairs.
                                 </p>
                             </div>
 
@@ -75,10 +84,44 @@
                                 <ul class="stack-list">
                                     <li>Python</li>
                                     <li>PostgreSQL</li>
+                                    <li>pgvector</li>
                                     <li>Docker</li>
+                                    <li>Docling</li>
                                     <li>Claude API</li>
                                     <li>OpenAI API</li>
-                                    <li>pgvector</li>
+                                </ul>
+                            </section>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="reveal">
+                            <img src="images/eddo.jpg" alt="Mini Eddo Logo">
+                            <h3>ML Experiments</h3>
+                            <p class="subtitle">Self-Directed Deep Learning Research · 10/2026 – Present</p>
+                            <p><a href="https://github.com/eddoyang/ml_experiments" target="_blank"
+                                    rel="noopener noreferrer">Repo</a></p>
+                            <div class="desc">
+                                <p style="margin-bottom: 5px;">
+                                    A course assignment extended into my own experiment: what's the best way to adapt an
+                                    ImageNet-pretrained ResNet-18 to 10 PASCAL superclasses?
+                                </p>
+                                <p style="margin-bottom: 5px;">
+                                    I compared two approaches: averaging the head weights of each superclass's ImageNet subclasses,
+                                    versus summing the subclasses' softmax probabilities. Probability summing won both zero-shot
+                                    (95.6% vs. 92.4%) and after head-only fine-tuning (96.9% vs. 95.3%), and came out ahead on all 3 seeds.
+                                </p>
+                                <p>
+                                    Then I added an "others" class for the 774 ImageNet classes that don't map to any superclass,
+                                    and the result reversed: probability summing dropped to 88.9% while weight averaging held at 95.3%.
+                                </p>
+                            </div>
+
+                            <section class="stack">
+                                <ul class="stack-list">
+                                    <li>Python</li>
+                                    <li>PyTorch</li>
+                                    <li>torchvision</li>
                                 </ul>
                             </section>
                         </div>
@@ -89,23 +132,30 @@
                             <img src="images/Momentum.png" alt="Momentum Logo">
 
                             <h3>Momentum</h3>
-                            <p class="subtitle">Personal Project</p>
+                            <p class="subtitle">Task Planner with Natural-Language Parsing · 04/2026 – 09/2026</p>
                             <p><a href="https://momentum-production-dc31.up.railway.app/" target="_blank"
                                     rel="noopener noreferrer">Live Demo</a></p>
                             <p><a href="https://github.com/eddoyang/Momentum" target="_blank"
                                     rel="noopener noreferrer">Repo</a></p>
 
                             <div class="desc">
-                                <p style="margin-bottom: 5px";>
-                                    A personal task manager to keep you focused on what's important.
+                                <p style="margin-bottom: 5px;">
+                                    A full-stack task planner to keep you focused on what's important.
                                 </p>
-
+                                <p style="margin-bottom: 5px;">
+                                    Create, edit, categorize, and track tasks by deadline, with the closest upcoming deadline always
+                                    front and center. A Spring Boot REST backend serves a React frontend, deployed on Railway behind a
+                                    Docker build.
+                                </p>
+                                <p style="margin-bottom: 5px;">
+                                    Type a task in plain English and the Claude API fills in the title, category, and deadline through a
+                                    forced tool schema for validated output. You confirm before anything is saved, and it falls back to
+                                    your raw input if the API is unavailable.
+                                </p>
                                 <p>
-                                    Momentum is a personal project that lets you add, complete, and remove tasks, with a
-                                    focus on hour-by-hour deadline ordering. Add a task manually, or type it in plain English 
-                                    and let the parser fill in the title, category, and deadline. You confirm before it saves. 
-                                    The app sorts tasks by their closest upcoming deadline so the next thing you need to work on 
-                                    is always front and center.
+                                    Under the hood, a normalized MySQL schema makes the next task a direct indexed lookup (verified with
+                                    query plans) and each edit writes one row; foreign keys prevent orphaned tasks, and transactions make
+                                    reordering all-or-nothing.
                                 </p>
                             </div>
 
@@ -113,13 +163,11 @@
                                 <ul class="stack-list">
                                     <li>Java</li>
                                     <li>Spring Boot</li>
+                                    <li>React</li>
                                     <li>MySQL</li>
                                     <li>Claude API</li>
-                                    <li>React</li>
-                                    <li>Vite</li>
-                                    <li>HTML</li>
-                                    <li>CSS</li>
                                     <li>Docker</li>
+                                    <li>Railway</li>
                                 </ul>
                             </section>
                         </div>
@@ -131,7 +179,7 @@
 
                             <img src="images/ReLeaf.png" alt="ReLeaf Logo">
                             <h3>ReLeaf</h3>
-                            <p class="subtitle">Hackathon Project — Gemini API Substream Winner</p>
+                            <p class="subtitle">Hack the Coast · 1st Place &amp; Best Use of Gemini API · 02/2026</p>
                             <p>
                                 <a style="margin-right: 25px" href="https://releaf-city.vercel.app/" target="_blank"
                                     rel="noopener noreferrer">Live Demo</a>
@@ -144,20 +192,29 @@
                                     Repo </a></p>
 
                             <div class="desc">
+                                <p style="margin-bottom: 5px;">
+                                    A 3D urban-heat planner that helps cities combat the Urban Heat Island effect.
+                                </p>
+                                <p style="margin-bottom: 5px;">
+                                    ReLeaf maps Vancouver's surface temperatures and projects the cooling, CO<sub>2</sub> offset, and ROI
+                                    of placing trees, cool roofs, and bio-swales. A FastAPI + Rasterio backend handles per-pixel
+                                    temperature lookups and hotspot ranking, validating placements against OpenStreetMap data.
+                                </p>
                                 <p>
-                                    ReLeaf is a smart urban planning tool designed to help cities and communities combat
-                                    the Urban Heat Island (UHI) effect. It combines
-                                    photorealistic 3D city visualization, real satellite thermal data, and Google's
-                                    Gemini AI to provide actionable insights for greener, cooler cities.
+                                    Gemini renders the planned interventions into real Street View images (cached in Supabase) and drafts
+                                    FEMA grant narratives from the simulation results.
                                 </p>
                             </div>
                             <section class="stack">
                                 <ul class="stack-list">
-                                    <li>React</li>
-                                    <li>Deck.gl</li>
                                     <li>Python</li>
                                     <li>FastAPI</li>
-                                    <li>Google Gemini</li>
+                                    <li>NumPy</li>
+                                    <li>Rasterio</li>
+                                    <li>React</li>
+                                    <li>Deck.gl</li>
+                                    <li>Supabase</li>
+                                    <li>Gemini API</li>
                                     <li>Google Map Tiles API</li>
                                 </ul>
                             </section>
@@ -175,7 +232,7 @@
                                     rel="noopener noreferrer">Repo</a>
                             </p>
                             <div class="desc">
-                                <p style="margin-bottom: 5px";>
+                                <p style="margin-bottom: 5px;">
                                     This site, built from scratch without frameworks
                                 </p>
                                 <p>
@@ -201,7 +258,7 @@
 
                     <article class="project-card">
                         <div class="reveal">
-                            <div class="img-placeholder"></div>
+                            <img src="images/eddo.jpg" alt="Mini Eddo Logo">
                             <h3>Folder Sorter</h3>
                             <p class="subtitle">Academic Project</p>
                             <div class="desc">
