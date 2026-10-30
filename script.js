@@ -61,3 +61,23 @@ if (dest) {
     window.scrollTo(0, 0);
     setTimeout(() => dest.scrollIntoView({ behavior: "smooth" }), 600);
 }
+
+/* --------- Resume popup --------- */
+const resumeDialog = document.querySelector(".resume-dialog");
+
+if (resumeDialog) {
+    // the link still opens the image on its own if JavaScript is off
+    document.querySelectorAll(".resume-link").forEach((link) => {
+        link.addEventListener("click", (e) => {
+            e.preventDefault();
+            resumeDialog.showModal();
+        });
+    });
+
+    resumeDialog.querySelector(".resume-close").addEventListener("click", () => resumeDialog.close());
+
+    // clicking the dark backdrop closes it; Esc closes it natively
+    resumeDialog.addEventListener("click", (e) => {
+        if (e.target === resumeDialog) resumeDialog.close();
+    });
+}

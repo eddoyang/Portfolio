@@ -4,64 +4,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="refresh" content="0; url=/?to=projects">
 
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Short+Stack&family=Sniglet&display=swap" rel="stylesheet">
 
-
     <link rel="icon" href="favicon.ico" sizes="32x32">
     <link rel="icon" type="image/png" sizes="96x96" href="assets/icon-96.png">
     <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-    
+
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 
-    <title>Portfolio</title>
+    <title>Eddie Yang</title>
 </head>
 
-<body class="home">
+<body>
+
+    <!-- Slides in once you scroll past the moon -->
+    <header class="site-header">
+        <nav>
+            <a href="#home" class="brand">Eddie Yang</a>
+            <a href="#about" data-section="about">Me</a>
+            <a href="#projects" data-section="projects">Projects</a>
+            <a href="#contact" data-section="contact">Contact</a>
+            <a href="https://github.com/eddoyang" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://www.linkedin.com/in/eddie-yang-b092a5361/" target="_blank"
+                rel="noopener noreferrer">LinkedIn</a>
+            <a href="images/resume.png" class="resume-link">Resume</a>
+            
+        </nav>
+    </header>
+
     <main>
-        <section class="hero hero-home">
+
+        <!-- ============ Home ============ -->
+        <section class="hero hero-home" id="home">
 
             <div class="moon-stage">
 
-                <div class="moon"></div>
+                <div class="moon-float">
+                    <div class="moon"></div>
+                </div>
 
-                <h1 class="moon-name" aria-label="Eddie Yang">
-                    <svg viewBox="0 0 200 200" aria-hidden="true">
-                        <defs>
-                            <path id="nameArc" fill="none"
-                                d="M 100,100 m -72,0 a 72,72 0 1,1 144,0 a 72,72 0 1,1 -144,0" />
-                        </defs>
-                        <text>
-                            <textPath href="#nameArc" startOffset="12.5%" text-anchor="middle">Eddie Yang</textPath>
-                        </text>
-                    </svg>
-                </h1>
+                <div class="hero-fade">
+                    <h1 class="moon-name" aria-label="Eddie Yang">
+                        <svg viewBox="0 0 200 200" aria-hidden="true">
+                            <defs>
+                                <path id="nameArc" fill="none"
+                                    d="M 100,100 m -72,0 a 72,72 0 1,1 144,0 a 72,72 0 1,1 -144,0" />
+                            </defs>
+                            <text>
+                                <textPath href="#nameArc" startOffset="12.5%" text-anchor="middle">Eddie Yang</textPath>
+                            </text>
+                        </svg>
+                    </h1>
 
-                <nav class="orbit-nav" aria-label="Moon navigation">
-                    <ul>
-                        <li><a href="about.html">Me</a></li>
-                        <li><a href="projects.html">Projects</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                        <li><a href="https://github.com/eddoyang" target="_blank" rel="noopener noreferrer">GitHub</a>
-                        </li>
-                        <li><a href="https://www.linkedin.com/in/eddie-yang-b092a5361/" target="_blank"
-                                rel="noopener noreferrer">LinkedIn</a></li>
-                    </ul>
-                </nav>
-
-
+                    <nav class="orbit-nav" aria-label="Moon navigation">
+                        <ul>
+                            <li><a href="#about">Me</a></li>
+                            <li><a href="#projects">Projects</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                            <li><a href="https://github.com/eddoyang" target="_blank" rel="noopener noreferrer">GitHub</a>
+                            </li>
+                            <li><a href="https://www.linkedin.com/in/eddie-yang-b092a5361/" target="_blank"
+                                    rel="noopener noreferrer">LinkedIn</a></li>
+                            <li><a href="images/resume.png" class="resume-link">Resume</a></li>                        </ul>
+                    </nav>
+                </div>
 
             </div>
 
+            <a href="#about" class="scroll-cue hero-fade" aria-label="Scroll to about">
+                <span>scroll</span>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
+            </a>
+
             <div class="star" style="top:18%; left:22%; animation-delay:0s"></div>
-            <div class="star" style="top:30%; left:72%; animation-delay:.6s"></div>
+            <div class="star" style="top:30%; left:72%; animation-delay:0.6s"></div>
             <div class="star" style="top:40%; left:13%; animation-delay:1.2s"></div>
-            <div class="star" style="top:60%; left:90%; animation-delay:.6s"></div>
+            <div class="star" style="top:60%; left:90%; animation-delay:0.6s"></div>
             <div class="star" style="top:55%; left:25%; animation-delay:1.2s"></div>
             <div class="star" style="top:13%; left:56%; animation-delay:0s"></div>
             <div class="star" style="top:20%; left:95%; animation-delay:0.6s"></div>
@@ -74,11 +97,392 @@
             <div class="star" style="top:96%; left:65%; animation-delay:1.2s"></div>
 
         </section>
+
+        <!-- ============ Me ============ -->
+        <section class="section about" id="about">
+            <div class="container">
+
+                <div class="section-head reveal">
+                    <h2 class="section-title">Me</h2>
+                    <span class="section-line" aria-hidden="true"></span>
+                </div>
+
+                <div class="reveal">
+                    <h3 class="sub-head">A little about me</h3>
+                    <p style="margin-bottom: 10px;">
+                        Hello! <br>
+                        
+                        My name is Eddie, and I'm a student at the University of British Columbia pursuing a BSc in Computer Science
+                        with an option in Artificial Intelligence. I'm passionate about deep learning, especially generative AI and computer
+                        vision, and I aspire to become an AI research engineer. Right now, I'm tuning the retrieval in my RAG system, Zoned,
+                        and running my own PyTorch experiments.
+                        <br><br>
+                        In my free time, I enjoy playing badminton, watching shows, and eating good food.
+                        <br><br><br>
+                    </p>
+                </div>
+
+                <div class="reveal">
+                    <h3 class="sub-head">Technical Skills</h3>
+
+                    <div class="skills">
+                        <h4>Languages</h4>
+                        <ul class="skills-list">
+                            <li>Python</li>
+                            <li>Java</li>
+                            <li>SQL</li>
+                            <li>JavaScript</li>
+                            <li>TypeScript</li>
+                            <li>HTML/CSS</li>
+                            <li>C/C++</li>
+                            <li>R</li>
+                        </ul>
+
+                        <h4>Frameworks</h4>
+                        <ul class="skills-list">
+                            <li>PyTorch</li>
+                            <li>FastAPI</li>
+                            <li>Spring Boot</li>
+                            <li>React</li>
+                        </ul>
+
+                        <h4>Libraries</h4>
+                        <ul class="skills-list">
+                            <li>scikit-learn</li>
+                            <li>torchvision</li>
+                            <li>NumPy</li>
+                            <li>pandas</li>
+                            <li>Matplotlib</li>
+                            <li>Docling</li>
+                            <li>psycopg</li>
+                            <li>Alembic</li>
+                            <li>Rasterio</li>
+                            <li>Deck.gl</li>
+                            <li>pytest</li>
+                            <li>JUnit</li>
+                        </ul>
+
+                        <h4>Databases</h4>
+                        <ul class="skills-list">
+                            <li>PostgreSQL</li>
+                            <li>pgvector</li>
+                            <li>MySQL</li>
+                            <li>Supabase</li>
+                        </ul>
+
+                        <h4>Tools &amp; APIs</h4>
+                        <ul class="skills-list">
+                            <li>Git</li>
+                            <li>Docker</li>
+                            <li>Linux</li>
+                            <li>Maven</li>
+                            <li>REST APIs</li>
+                            <li>Claude API</li>
+                            <li>OpenAI API</li>
+                            <li>Gemini API</li>
+                            <li>Railway</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ============ Projects ============ -->
+        <section class="section" id="projects">
+            <div class="container">
+
+                <div class="section-head reveal">
+                    <h2 class="section-title">Projects</h2>
+                    <span class="section-line" aria-hidden="true"></span>
+                </div>
+
+                <div class="projects-grid">
+                    <article class="project-card">
+                        <div class="reveal">
+                            <img src="images/eddo.jpg" alt="Mini Eddo Logo">
+                            <h3>Zoned</h3>
+                            <p class="subtitle">Citation-grounded Document Q&amp;A · 07/2026 – Present</p>
+                            <p><a href="https://github.com/eddoyang/zoned-chatbot" target="_blank"
+                                    rel="noopener noreferrer">Repo</a></p>
+                            <div class="desc">
+                                <p style="margin-bottom: 5px;">
+                                    A retrieval-augmented generation (RAG) system that answers questions using only a set of uploaded
+                                    documents, and explicitly refuses when the answer isn't there.
+                                </p>
+                                <p style="margin-bottom: 5px;">
+                                    Upload a set of PDFs, ask a question, and Zoned retrieves the relevant passages, answers from those
+                                    passages alone, and cites the document and page behind every claim. PDFs are parsed with Docling,
+                                    embedded with the OpenAI API, and answered by the Claude API.
+                                </p>
+                                <p style="margin-bottom: 5px;">
+                                    Everything lives in a single PostgreSQL + pgvector schema (documents, chunks, and 1536-dim embeddings),
+                                    with retrieval written as raw SQL over psycopg 3, an HNSW cosine index, a generated tsvector column,
+                                    and Alembic migrations. Ingestion is idempotent: SHA-256 content hashing lets renamed or duplicated files
+                                    skip re-parsing, and per-document transactions isolate mid-batch failures, cutting re-runs to seconds.
+                                </p>
+                                <p>
+                                    On a 33-question evaluation set it scored 23/23 document-level recall, 19/23 top-1 attribution,
+                                    10/10 correct refusals, and zero fabricated answers, with every ranking miss traced to nearly
+                                    identical document pairs.
+                                </p>
+                            </div>
+
+                            <section class="stack">
+                                <ul class="stack-list">
+                                    <li>Python</li>
+                                    <li>PostgreSQL</li>
+                                    <li>pgvector</li>
+                                    <li>Docker</li>
+                                    <li>Docling</li>
+                                    <li>Claude API</li>
+                                    <li>OpenAI API</li>
+                                </ul>
+                            </section>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="reveal">
+                            <img src="images/eddo.jpg" alt="Mini Eddo Logo">
+                            <h3>ML Experiments</h3>
+                            <p class="subtitle">Self-Directed Deep Learning Research · 10/2026 – Present</p>
+                            <p><a href="https://github.com/eddoyang/ml_experiments" target="_blank"
+                                    rel="noopener noreferrer">Repo</a></p>
+                            <div class="desc">
+                                <p style="margin-bottom: 5px;">
+                                    A course assignment extended into my own experiment: what's the best way to adapt an
+                                    ImageNet-pretrained ResNet-18 to 10 PASCAL superclasses?
+                                </p>
+                                <p style="margin-bottom: 5px;">
+                                    I compared two approaches: averaging the head weights of each superclass's ImageNet subclasses,
+                                    versus summing the subclasses' softmax probabilities. Probability summing won both zero-shot
+                                    (95.6% vs. 92.4%) and after head-only fine-tuning (96.9% vs. 95.3%), and came out ahead on all 3 seeds.
+                                </p>
+                                <p>
+                                    Then I added an "others" class for the 774 ImageNet classes that don't map to any superclass,
+                                    and the result reversed: probability summing dropped to 88.9% while weight averaging held at 95.3%.
+                                </p>
+                            </div>
+
+                            <section class="stack">
+                                <ul class="stack-list">
+                                    <li>Python</li>
+                                    <li>PyTorch</li>
+                                    <li>torchvision</li>
+                                </ul>
+                            </section>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="reveal">
+                            <img src="images/Momentum.png" alt="Momentum Logo">
+
+                            <h3>Momentum</h3>
+                            <p class="subtitle">Task Planner with Natural-Language Parsing · 04/2026 – 09/2026</p>
+                            <p><a href="https://momentum-production-dc31.up.railway.app/" target="_blank"
+                                    rel="noopener noreferrer">Live Demo</a></p>
+                            <p><a href="https://github.com/eddoyang/Momentum" target="_blank"
+                                    rel="noopener noreferrer">Repo</a></p>
+
+                            <div class="desc">
+                                <p style="margin-bottom: 5px;">
+                                    A full-stack task planner to keep you focused on what's important.
+                                </p>
+                                <p style="margin-bottom: 5px;">
+                                    Create, edit, categorize, and track tasks by deadline, with the closest upcoming deadline always
+                                    front and center. A Spring Boot REST backend serves a React frontend, deployed on Railway behind a
+                                    Docker build.
+                                </p>
+                                <p style="margin-bottom: 5px;">
+                                    Type a task in plain English and the Claude API fills in the title, category, and deadline through a
+                                    forced tool schema for validated output. You confirm before anything is saved, and it falls back to
+                                    your raw input if the API is unavailable.
+                                </p>
+                                <p>
+                                    Under the hood, a normalized MySQL schema makes the next task a direct indexed lookup (verified with
+                                    query plans) and each edit writes one row; foreign keys prevent orphaned tasks, and transactions make
+                                    reordering all-or-nothing.
+                                </p>
+                            </div>
+
+                            <section class="stack">
+                                <ul class="stack-list">
+                                    <li>Java</li>
+                                    <li>Spring Boot</li>
+                                    <li>React</li>
+                                    <li>MySQL</li>
+                                    <li>Claude API</li>
+                                    <li>Docker</li>
+                                    <li>Railway</li>
+                                </ul>
+                            </section>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="reveal">
+
+                            <img src="images/ReLeaf.png" alt="ReLeaf Logo">
+                            <h3>ReLeaf</h3>
+                            <p class="subtitle">Hack the Coast · 1st Place &amp; Best Use of Gemini API · 02/2026</p>
+                            <p>
+                                <a style="margin-right: 25px" href="https://releaf-city.vercel.app/" target="_blank"
+                                    rel="noopener noreferrer">Live Demo</a>
+                                <a href="https://releaf-backend.onrender.com/docs" target="_blank"
+                                    rel="noopener noreferrer">Backend API</a>
+                            </p>
+                            <p><a href="https://youtu.be/P60QWDik0zc" target="_blank" rel="noopener noreferrer">Demo
+                                    Video</a></p>
+                            <p><a href="https://github.com/anthonyl8/ReLeaf" target="_blank" rel="noopener noreferrer">
+                                    Repo </a></p>
+
+                            <div class="desc">
+                                <p style="margin-bottom: 5px;">
+                                    A 3D urban-heat planner that helps cities combat the Urban Heat Island effect.
+                                </p>
+                                <p style="margin-bottom: 5px;">
+                                    ReLeaf maps Vancouver's surface temperatures and projects the cooling, CO<sub>2</sub> offset, and ROI
+                                    of placing trees, cool roofs, and bio-swales. A FastAPI + Rasterio backend handles per-pixel
+                                    temperature lookups and hotspot ranking, validating placements against OpenStreetMap data.
+                                </p>
+                                <p>
+                                    Gemini renders the planned interventions into real Street View images (cached in Supabase) and drafts
+                                    FEMA grant narratives from the simulation results.
+                                </p>
+                            </div>
+                            <section class="stack">
+                                <ul class="stack-list">
+                                    <li>Python</li>
+                                    <li>FastAPI</li>
+                                    <li>NumPy</li>
+                                    <li>Rasterio</li>
+                                    <li>React</li>
+                                    <li>Deck.gl</li>
+                                    <li>Supabase</li>
+                                    <li>Gemini API</li>
+                                    <li>Google Map Tiles API</li>
+                                </ul>
+                            </section>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="reveal">
+
+                            <img src="images/PortfolioLogo.png" alt="Portfolio Logo">
+                            <h3>Digital Portfolio</h3>
+                            <p class="subtitle">Portfolio built from scratch</p>
+                            <p>
+                                <a href="https://github.com/eddoyang/Portfolio" target="_blank"
+                                    rel="noopener noreferrer">Repo</a>
+                            </p>
+                            <div class="desc">
+                                <p style="margin-bottom: 5px;">
+                                    This site, built from scratch without frameworks
+                                </p>
+                                <p>
+                                    Dedicated to displaying my collection of projects and
+                                    information about me.
+                                    This is a responsive personal portfolio built from scratch in HTML/CSS/JS
+                                    with an animated CSS-only moon hero with radial orbit navigation, IntersectionObserver
+                                    scroll reveals, and full keyboard/reduced-motion accessibility,
+                                    deployed on GitHub Pages.
+                                </p>
+                            </div>
+                            <section class="stack">
+                                <ul class="stack-list">
+                                    <li>HTML</li>
+                                    <li>JavaScript</li>
+                                    <li>CSS</li>
+                                    <li>GitHub Pages</li>
+                                </ul>
+                            </section>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="reveal">
+                            <img src="images/eddo.jpg" alt="Mini Eddo Logo">
+                            <h3>Folder Sorter</h3>
+                            <p class="subtitle">Academic Project</p>
+                            <div class="desc">
+                                <p>
+                                    A hierarchical file management system that creates and sorts nested folder/file
+                                    relationships,
+                                    utilizing JSON-based persistence, a GUI system designed with Java Swing, and JUnit
+                                    testing to ensure code stability.
+                                </p>
+                            </div>
+
+                            <section class="stack">
+                                <ul class="stack-list">
+                                    <li>Java</li>
+                                    <li>Java Swing</li>
+                                    <li>JUnit</li>
+                                </ul>
+                            </section>
+                        </div>
+                    </article>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ============ Contact ============ -->
+        <section class="section" id="contact">
+            <div class="container">
+
+                <div class="section-head reveal">
+                    <h2 class="section-title">Contact</h2>
+                    <span class="section-line" aria-hidden="true"></span>
+                </div>
+
+                <div class="contact-wrap">
+                    <div class="contact-group reveal">
+                        <h3 class="sub-head">Email</h3>
+                        <p><a href="mailto:eddieyang2828@gmail.com">eddieyang2828@gmail.com</a></p>
+                    </div>
+
+                    <div class="contact-group reveal">
+
+                        <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+                            <input type="hidden" name="access_key" value="c8bf1978-dbd7-43e2-bbab-813b7468dd5a">
+
+                            <input type="checkbox" name="botcheck" style="display:none;">
+
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+
+                            <button type="submit">Send message</button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
     </main>
 
-    <footer class="home">
+    <!-- Resume popup -->
+    <dialog class="resume-dialog" aria-label="Resume">
+        <div class="resume-bar">
+            <a href="assets/Eddie_Yang.pdf" download>Download PDF</a>
+            <button type="button" class="resume-close" aria-label="Close">&times;</button>
+        </div>
+        <img src="images/resume.png" alt="Eddie Yang's resume" width="1700" height="2200" loading="lazy">    </dialog>
+    <footer>
         <p>&copy; Copyright 2026 Eddie Yang</p>
     </footer>
 
 </body>
+
 </html>
