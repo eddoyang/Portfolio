@@ -432,11 +432,12 @@ header nav a:first-child {
 }
 
 
+/* spaced by label width so neighbouring bubbles have even gaps, not even angles */
 .orbit-nav li:nth-child(1) { --a: -10deg; }   /* About */
-.orbit-nav li:nth-child(2) { --a: 20deg; }   /* Projects */
-.orbit-nav li:nth-child(3) { --a: 50deg; }   /* Contact */
-.orbit-nav li:nth-child(4) { --a: 80deg; }   /* GitHub */
-.orbit-nav li:nth-child(5) { --a: 110deg; }   /* LinkedIn */
+.orbit-nav li:nth-child(2) { --a: 11deg; }   /* Projects */
+.orbit-nav li:nth-child(3) { --a: 33deg; }   /* Contact */
+.orbit-nav li:nth-child(4) { --a: 66deg; }   /* GitHub */
+.orbit-nav li:nth-child(5) { --a: 103deg; }   /* LinkedIn */
 .orbit-nav li:nth-child(6) { --a: 140deg; }   /* Resume */
 
 .star {
@@ -879,7 +880,7 @@ footer{
 }
 /* --------- Mobile Sizing --------- */
 @media (max-width: 640px) {
-    /* Hero: moon higher, links as a compact 3 × 2 grid instead of a tall stack */
+    /* Hero: bigger moon, links stay on the orbit around it */
     .hero-home {
         justify-content: center;
         gap: 0;
@@ -916,21 +917,20 @@ footer{
         animation: none;
     }
 
+    /* Orbit links: same arc as desktop, scaled to the 56vmin moon (30/40 × 56 = 42vmin) */
     .orbit-nav {
-        margin-top: 22vmin;              /* clears the crescent */
+        top: calc(50% + 13vmin);
+        left: calc(50% - 2vmin);
+        animation: none;                 /* moon and name don't float on mobile either */
     }
 
-    .orbit-nav ul {
-        display: grid;
-        grid-template-columns: repeat(3, auto);
-        justify-content: center;
-        gap: 10px;
+    .orbit-nav li {
+        --r: 42vmin;
     }
 
     .orbit-nav a {
-        min-width: 0;
-        padding: 0.7em 1em;
-        font-size: 0.9rem;
+        padding: 0.55em 0.9em;
+        font-size: min(3vmin, 0.85rem);  /* no floor: buttons shrink with the orbit so gaps keep their proportion */
     }
 
     .scroll-cue {
