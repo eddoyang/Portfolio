@@ -209,18 +209,18 @@
                                     rel="noopener noreferrer">Repo</a></p>
                             <div class="desc">
                                 <p style="margin-bottom: 5px;">
-                                    A multi-agent system that drafts cited, compliance-safe replies to consumer finance complaints,
-                                    grounded in 5,163 real CFPB complaints and federal Regulations E, F and Z.
+                                    A multi-agent system that drafts cited, compliance-safe replies to consumer finance complaints. It searches 
+                                    5,163 real CFPB complaints and 413 sections of federal Regulations E, F and Z.
                                 </p>
                                 <ul class="desc-list">
-                                    <li><strong>Two LangGraph workflows:</strong> a complaint-reply pipeline with human approval, and a
-                                        supervisor-routed analyst agent. Both have step caps, loop detection and escalation to a person.</li>
-                                    <li><strong>Layered hallucination controls:</strong> per-claim citations, deterministic checks and an
-                                        LLM fact-checker, reaching a 1.0 mean supported-claim ratio.</li>
-                                    <li><strong>Measured improvement:</strong> raised the eval pass rate from 61% to 93% (28 scenarios × 3
-                                        runs), and the result held on a 23-case held-out set.</li>
-                                    <li><strong>Cost-aware design:</strong> about $0.05 per complaint by routing classification to a small
-                                        model. Lean context beat a larger one: 2.2× cheaper with fewer unsupported claims.</li>
+                                    <li><strong>Two LangGraph workflows:</strong> a complaint-reply pipeline that waits for human approval, and a 
+                                        supervisor-routed analyst agent. Eight stopping conditions, enforced in code rather than the prompt, keep every run bounded.</li>
+                                    <li><strong>Layered hallucination controls:</strong> a retrieval score floor, per-claim citations, code checks, an LLM fact-checker and 
+                                        human approval. Zero invented rules across 153 scored runs: every failure was an incomplete answer or a hand-off to a person.</li>
+                                    <li><strong>Measured improvement:</strong> raised the pass rate from 61% to 93% on 28 test cases (3 runs each), then scored 90% on 23 new 
+                                        cases it was never tuned on.</li>
+                                    <li><strong>Cost-aware design:</strong> about $0.05 per request, by routing classification and planning to a small model with 20× 
+                                        cheaper input. Three times the context cost 40% more with no accuracy gain, so lean context stays the default.</li>
                                 </ul>
                             </div>
                            <section class="stack">
@@ -229,6 +229,8 @@
                                     <li>LangGraph</li>
                                     <li>Claude API</li>
                                     <li>pgvector</li>
+                                    <li>PostgreSQL</li>
+                                    <li>streamlit</li>
                                 </ul>
                             </section>
                         </div>
